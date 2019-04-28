@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -25,7 +25,7 @@ public class Save : MonoBehaviour
 
     void SaveminusyRay()
     {
-        string minusyraypath = Application.dataPath + "/Dissertation/TextFiles/minusyray.txt"; //set path for new text file
+        string minusyraypath = Application.dataPath + "minusyray.txt"; //set path for new text file
         if (File.Exists(minusyraypath)) //if the file already exists, display error and exit
         {
             Debug.Log(minusyraypath + " already exists.");
@@ -42,7 +42,7 @@ public class Save : MonoBehaviour
 
     void SaveyRay()
     {
-        string yraypath = Application.dataPath + "/Dissertation/TextFiles/yray.txt";
+        string yraypath = Application.dataPath + "yray.txt";
         if (File.Exists(yraypath))
         {
             Debug.Log(yraypath + " already exists.");
@@ -59,7 +59,7 @@ public class Save : MonoBehaviour
 
     void SaveActions() //this function must be edited depending on whether the agent actions or BasicControl actions are being saved
     {
-        string actionspath = Application.dataPath + "/Dissertation/TextFiles/actions.txt";
+        string actionspath = Application.dataPath + "actions.txt";
         if (File.Exists(actionspath))
         {
             Debug.Log(actionspath + " already exists.");
@@ -78,7 +78,7 @@ public class Save : MonoBehaviour
 
     void SavexPos()
     {
-        string xpospath = Application.dataPath + "/Dissertation/TextFiles/xpos.txt";
+        string xpospath = Application.dataPath + "xpos.txt";
         if (File.Exists(xpospath))
         {
             Debug.Log(xpospath + " already exists.");
@@ -95,7 +95,7 @@ public class Save : MonoBehaviour
 
     void SaveyPos()
     {
-        string ypospath = Application.dataPath + "/Dissertation/TextFiles/ypos.txt";
+        string ypospath = Application.dataPath + "ypos.txt";
         if (File.Exists(ypospath))
         {
             Debug.Log(ypospath + " already exists.");
@@ -112,7 +112,7 @@ public class Save : MonoBehaviour
 
     void SaveSteps()
     {
-        string stepspath = Application.dataPath + "/Dissertation/TextFiles/stepsbeforecollision.txt";
+        string stepspath = Application.dataPath + "stepsbeforecollision.txt";
         if (File.Exists(stepspath))
         {
             Debug.Log(stepspath + " already exists.");
