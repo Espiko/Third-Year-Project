@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MLAgents;
@@ -7,7 +7,7 @@ public class CollisionAvoidanceAgent : Agent
 {
     private float CollisionReward, TimeReward;
     private float raycastmax, yRaylength, minusyRaylength, yRaynorm, minusyRaynorm;
-    private float turnRate, steps, runnumber;
+    private float turnRate, steps;
     public bool destroyobstacle;
     public List<float> agentactionsList = new List<float>(); //create list to keep track of actions
     public List<float> agentsurvivaltimeList = new List<float>(); //create list to keep track of steps before collision
@@ -24,7 +24,6 @@ public class CollisionAvoidanceAgent : Agent
     public override void InitializeAgent()
     {
         steps = 0f;
-        runnumber = 0f;
         turnRate = 125f;
 
         CollisionReward = -1f;
@@ -101,8 +100,6 @@ public class CollisionAvoidanceAgent : Agent
             player.GetComponent<CollisionDetection>().Collision = false;
             destroyobstacle = true; //destroy all obstacles in order to reset
             agentsurvivaltimeList.Add(steps);
-            runnumber += 1;
-            Debug.Log("Run Number: " + runnumber);
             Done();
         }
 
@@ -112,8 +109,6 @@ public class CollisionAvoidanceAgent : Agent
         {
             destroyobstacle = true;
             agentsurvivaltimeList.Add(steps);
-            runnumber += 1;
-            Debug.Log("Run Number: " + runnumber);
             Done();
         }
 
